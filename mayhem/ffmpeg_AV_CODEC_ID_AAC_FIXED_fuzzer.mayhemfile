@@ -1,0 +1,4 @@
+project: PROJECT
+target: ffmpeg_AV_CODEC_ID_AAC_FIXED_fuzzer
+cmds:
+- cmd: /out/ffmpeg_AV_CODEC_ID_AAC_FIXED_fuzzer
