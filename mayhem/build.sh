@@ -144,7 +144,8 @@ PKG_CONFIG_PATH="$FFMPEG_DEPS_PATH/lib/pkgconfig" ./configure \
     --disable-protocols \
     --disable-demuxer=rtp,rtsp,sdp \
     --disable-devices \
-    --disable-shared
+    --disable-shared \
+    --disable-asm
 make clean
 make -j$(nproc) install
 
@@ -240,6 +241,7 @@ PKG_CONFIG_PATH="$FFMPEG_DEPS_PATH/lib/pkgconfig" ./configure \
     --disable-cuda_llvm  \
     --enable-demuxers \
     --disable-demuxer=rtp,rtsp,sdp \
+    --disable-asm
 
 CONDITIONALS=`grep 'DEMUXER 1$' config_components.h | sed 's/#define CONFIG_\(.*\)_DEMUXER 1/\1/'`
 if [ -n "${OSS_FUZZ_CI-}" ]; then
