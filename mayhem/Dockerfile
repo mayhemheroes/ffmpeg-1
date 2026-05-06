@@ -22,15 +22,15 @@ RUN rm -rf ffmpeg/mayhem
 
 RUN wget https://www.alsa-project.org/files/pub/lib/alsa-lib-1.1.0.tar.bz2
 RUN git clone --depth 1 https://github.com/mstorsjo/fdk-aac.git
-RUN git clone --depth 1 git://anongit.freedesktop.org/xorg/lib/libXext
+RUN git clone --depth 1 -b libXext-1.3.4 https://gitlab.freedesktop.org/xorg/lib/libXext.git
 RUN git clone --depth 1 https://github.com/intel/libva
-RUN git clone --depth 1 -b libvdpau-1.2 git://people.freedesktop.org/~aplattner/libvdpau
+RUN git clone --depth 1 -b libvdpau-1.2 https://gitlab.freedesktop.org/vdpau/libvdpau.git
 RUN git clone --depth 1 https://chromium.googlesource.com/webm/libvpx
 RUN git clone --depth 1 https://gitlab.xiph.org/xiph/ogg.git
 RUN git clone --depth 1 https://gitlab.xiph.org/xiph/opus.git
 RUN git clone --depth 1 https://gitlab.xiph.org/xiph/theora.git
 RUN git clone --depth 1 https://gitlab.xiph.org/xiph/vorbis.git
-RUN git clone --depth 1 https://gitlab.gnome.org/GNOME/libxml2.git
+RUN git clone --depth 1 -b v2.9.14 https://gitlab.gnome.org/GNOME/libxml2.git
 
 COPY mayhem/build.sh mayhem/group_seed_corpus.py $SRC/
 
